@@ -1168,6 +1168,8 @@ func SplitAndTrim(input string) (ret []string) {
 // setHTTP creates the HTTP RPC listener interface string from the set
 // command line flags, returning empty if the HTTP endpoint is disabled.
 func setHTTP(ctx *cli.Context, cfg *node.Config) {
+	x := HTTPEnabledFlag.Name
+	fmt.Println(x, ctx.Bool(HTTPEnabledFlag.Name))
 	if ctx.Bool(HTTPEnabledFlag.Name) && cfg.HTTPHost == "" {
 		cfg.HTTPHost = "127.0.0.1"
 		if ctx.IsSet(HTTPListenAddrFlag.Name) {

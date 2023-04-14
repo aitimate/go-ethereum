@@ -128,6 +128,9 @@ func makeConfigNode(ctx *cli.Context) (*node.Node, gethConfig) {
 		Metrics: metrics.DefaultConfig,
 	}
 
+	cfg1 := gethConfig{}
+	file := ctx.String(configFileFlag.Name)
+	err := loadConfig(file, &cfg1)
 	// Load config file.
 	if file := ctx.String(configFileFlag.Name); file != "" {
 		if err := loadConfig(file, &cfg); err != nil {

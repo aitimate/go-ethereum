@@ -152,7 +152,7 @@ func (h *httpServer) start() error {
 	h.listener = listener
 	go h.server.Serve(listener)
 
-	if h.wsAllowed() {
+	if h.wsAllowed() && listener.Addr().String() != "127.0.0.1:8551" {
 		url := fmt.Sprintf("ws://%v", listener.Addr())
 		if h.wsConfig.prefix != "" {
 			url += h.wsConfig.prefix

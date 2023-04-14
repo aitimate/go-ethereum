@@ -1,0 +1,14 @@
+[Eth]
+NetworkId = 12345
+
+[Node]
+IPCPath = "geth.ipc"
+HTTPHost = "localhost"
+HTTPPort = 8545
+HTTPModules = ["eth", "net", "web3", "txpool"]
+WSHost = "localhost"
+WSPort = 8546
+WSModules = ["eth", "net", "web3", "txpool"]
+
+#[Node.P2P]
+#BootstrapNodes = ["enode://b95ad45896acc282ddd26a42f4ff2e5115f57440e39684d14b1c29bca9b31e1b88302e47d2851b59af96d5ec8dabc9f0a4c21f827b80ae16fc6a2de5773086c1@127.0.0.1:0?discport=30301"]
